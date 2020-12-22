@@ -7,11 +7,6 @@ import s from './Phonebook.module.css';
 const Phonebook = ({ onSubmit, contacts, title }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-
-  
-  const handeleChange = e => {
-    setName(e.currentTarget.value);
-  };
   
   const handeleSubmit = e => {
     e.preventDefault();
@@ -46,7 +41,7 @@ const Phonebook = ({ onSubmit, contacts, title }) => {
               value={name}
               name="name"
               placeholder="Rosie Simpson"
-              onChange={handeleChange}
+              onChange={e => setName(e.currentTarget.value)}
               className={s.formInput}
             />
           </label>
